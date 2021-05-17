@@ -69,7 +69,7 @@ const LocationContainer = ({ queryTerm }) => {
 
 	return (
 		<div className="location-container">
-			{residents.length > 0 ? (
+			{locationName ? (
 				<LocationInfo
 					name={locationName}
 					type={locationType}

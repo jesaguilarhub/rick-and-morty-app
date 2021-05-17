@@ -1,7 +1,5 @@
-const baseUrl = 'https://rickandmortyapi.com/api/location/';
-
 const getLocationById = (locationId) => {
-	const promise = fetch(baseUrl + locationId);
+	const promise = fetch(`https://rickandmortyapi.com/api/location/${locationId}`);
 	return promise.then((res) => res.json());
 };
 
