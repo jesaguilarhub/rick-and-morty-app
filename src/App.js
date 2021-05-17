@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import SearchBox from './components/SearchBox';
+import LocationContainer from './components/LocationContainer';
 import './App.css';
 
+const getRandomLocation = () => {
+	return Math.floor(Math.random() * 108) + 1;
+};
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [
+		queryTerm,
+		setQueryTerm
+	] = useState(getRandomLocation());
+
+	return (
+		<div className="App">
+			<header className="App-header">
+				<SearchBox handleSearch={setQueryTerm} />
+				<LocationContainer queryTerm={queryTerm} />
+			</header>
+		</div>
+	);
 }
 
 export default App;

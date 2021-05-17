@@ -1,0 +1,26 @@
+.resident-info-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  border-radius: 10px;
+  background-color: #3c3e44;
+  margin-top: 10px;
+}
+
+.resident-image {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.resident-info-left {
+  width: 33.33%;
+}
+
+.resident-info-right {
+  width: 66.66%;
+  text-align: left;
+  padding-top: 15px;
+  padding-left: 10px;
+}
