@@ -32,13 +32,13 @@ const LocationContainer = ({ queryTerm }) => {
 				const isNameLocation = new RegExp('[a-z]');
 				if (isNameLocation.test(queryTerm)) {
 					getLocationByName(queryTerm)
-						.then((location) => {
-							setLocationName(location.name);
-							setLocationType(location.type);
-							setLocationDimension(location.dimension);
-							setPopulation(location.residents.length);
+						.then(({ results }) => {
+							setLocationName(results[0].name);
+							setLocationType(results[0].type);
+							setLocationDimension(results[0].dimension);
+							setPopulation(results[0].residents.length);
 							setResidents(
-								location.residents.slice(0, 9).map((residentUrl, idx) => {
+								results[0].residents.slice(0, 9).map((residentUrl, idx) => {
 									return <ResidentContainer key={idx} url={residentUrl} />;
 								})
 							);

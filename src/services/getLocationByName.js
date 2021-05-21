@@ -1,12 +1,6 @@
-async function getLocationByName(name, url = 'https://rickandmortyapi.com/api/location') {
-	try {
-		const data = await fetch(url).then((res) => res.json());
-		const found = data.results.find((location) => location.name === name);
-		if (found) return found;
-		return getLocationByName(name, data.info.next);
-	} catch (err) {
-		return err;
-	}
+const baseURL = 'https://rickandmortyapi.com/api/location/?name=';
+function getLocationByName(name) {
+	return fetch(baseURL + name).then((res) => res.json());
 }
 
 export default getLocationByName;
